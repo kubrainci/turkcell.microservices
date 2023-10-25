@@ -17,11 +17,14 @@ import java.math.BigDecimal;
 public class Product {
     //idleri string olarak yazıyoruz.
     //column diye işaretlememize gerek yok.
+    //veri tabanı dökümanları dışarıya açılmamalıdır.
     @Id
     private String id;
     private String name;
     private String description;
     private BigDecimal price;
     private int stock;
+    private String inventoryCode;
+
 
 }

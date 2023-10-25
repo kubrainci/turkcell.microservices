@@ -19,6 +19,7 @@ public class ProductManager implements ProductService{
                 .price(request.getPrice())
                 .description(request.getDescription())
                 .stock(request.getStock())
+                .inventoryCode(request.getInventoryCode())
                 .build();
         //Burası önce save edecek sonra idli halini product gönderecek,güncelleyeck.
        product =productRepository.save(product);
@@ -30,4 +31,24 @@ public class ProductManager implements ProductService{
                 .build();
         return response;
     }
+
+    @Override
+    public Boolean getByInventoryCode(String code, int requiredStock) {
+        Product product=productRepository.findByInventoryCode(code);
+        if (product==null || product.getStock()<requiredStock)
+            return false;
+        return true;
+    }
+
+   /* @Override
+    public Product getByInventoryCode(String code) {
+        //Direky Query yazmalıyız
+
+        // return productRepository.findByInventoryCode(code);--->BİRBİRİNE ALTARNETİF ÇÖZÜMLEMELER.
+        return productRepository.findByInventoryCodeQuery(code);
+    }*/
+
+
+
+
 }

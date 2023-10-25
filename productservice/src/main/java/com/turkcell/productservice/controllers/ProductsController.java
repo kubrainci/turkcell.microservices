@@ -2,6 +2,7 @@ package com.turkcell.productservice.controllers;
 
 import com.turkcell.productservice.dtos.requests.CreateProductRequest;
 import com.turkcell.productservice.dtos.responses.CreatedProductResponse;
+import com.turkcell.productservice.entities.Product;
 import com.turkcell.productservice.services.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,18 @@ public class ProductsController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public CreatedProductResponse add(@RequestBody CreateProductRequest request){
+
         return productService.add(request);
+    }
+
+    /*@GetMapping("getByInventoryCode")
+    public Product findByInventoryCode(String inventoryCode){
+        return productService.getByInventoryCode(inventoryCode);
+    }*/
+
+    @GetMapping("check-stock")
+    public Boolean getByInventoryCode(@RequestParam String invCode,
+                                      @RequestParam int requiredStock){
+        return productService.getByInventoryCode(invCode,requiredStock);
     }
 }
