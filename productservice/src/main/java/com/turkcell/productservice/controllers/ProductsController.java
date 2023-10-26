@@ -23,10 +23,7 @@ public class ProductsController {
         return productService.add(request);
     }
 
-    /*@GetMapping("getByInventoryCode")
-    public Product findByInventoryCode(String inventoryCode){
-        return productService.getByInventoryCode(inventoryCode);
-    }*/
+   
 
     @GetMapping("check-stock")
     public ResponseForSubmitOrder getByInventoryCode(@RequestParam String invCode,
