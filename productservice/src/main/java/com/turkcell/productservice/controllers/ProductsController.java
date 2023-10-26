@@ -2,6 +2,7 @@ package com.turkcell.productservice.controllers;
 
 import com.turkcell.productservice.dtos.requests.CreateProductRequest;
 import com.turkcell.productservice.dtos.responses.CreatedProductResponse;
+import com.turkcell.productservice.dtos.responses.ResponseForSubmitOrder;
 import com.turkcell.productservice.entities.Product;
 import com.turkcell.productservice.services.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -28,8 +29,8 @@ public class ProductsController {
     }*/
 
     @GetMapping("check-stock")
-    public Boolean getByInventoryCode(@RequestParam String invCode,
-                                      @RequestParam int requiredStock){
-        return productService.getByInventoryCode(invCode,requiredStock);
+    public ResponseForSubmitOrder getByInventoryCode(@RequestParam String invCode,
+                                                     @RequestParam int amount){
+        return productService.getByInventoryCode(invCode,amount);
     }
 }
