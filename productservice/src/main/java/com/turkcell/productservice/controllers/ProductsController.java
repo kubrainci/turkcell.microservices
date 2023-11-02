@@ -30,4 +30,9 @@ public class ProductsController {
                                                      @RequestParam int amount){
         return productService.getByInventoryCode(invCode,amount);
     }
+
+    @GetMapping("deneme")
+    public String deneme(){
+        return "Deneme";
+    }
 }
