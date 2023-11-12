@@ -1,0 +1,16 @@
+services:
+  discovery-service:
+    image: kubrainci/discoveryserver
+    ports:
+      - 8761:8761
+    mem_limit: 800m
+  keycloak:
+    image: quay.io/keycloak/keycloak
+    ports:
+      - 8080:8080
+    mem_limit: 850m
+    environment:
+      KEYCLOAK_ADMİN: admin
+      KEYCLOAK_ADMİN_PASSWORD: admin
+    command:
+      - start-dev

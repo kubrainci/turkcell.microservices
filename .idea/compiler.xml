@@ -9,8 +9,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
         <module name="discovery-server" />
-        <module name="orderservice" />
         <module name="productservice" />
+        <module name="orderservice" />
       </profile>
     </annotationProcessing>
   </component>

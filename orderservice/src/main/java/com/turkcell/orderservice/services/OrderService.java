@@ -1,11 +1,11 @@
 package com.turkcell.orderservice.services;
-
 import com.turkcell.orderservice.dtos.requests.CreateOrderRequest;
-import com.turkcell.productservice.dtos.responses.ResponseForSubmitOrder;
-
-
+import com.turkcell.orderservice.dtos.responses.SubmitOrderResponse;
 import java.util.List;
 
-public interface OrderService  {
-    List<ResponseForSubmitOrder> submitOrder( List<CreateOrderRequest> requests);
+public interface OrderService {
+    Boolean submitOrder(CreateOrderRequest requests);
+
+    List<SubmitOrderResponse> submitOrderWorkshop(List<CreateOrderRequest> requests);
 }
+
