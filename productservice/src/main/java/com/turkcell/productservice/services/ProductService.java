@@ -8,7 +8,7 @@ import com.turkcell.productservice.entities.Product;
 public interface ProductService {
     CreatedProductResponse add(CreateProductRequest request);
    /* Product getByInventoryCode(String code);*/
-   ResponseForSubmitOrder getByInventoryCode(String code, int requiredStock);
+    ResponseForSubmitOrder getByInventoryCode(String code, int requiredStock);
    /*  Product getByrequiredStock(String code,int requiredStock);*/
 
 }
